@@ -49,5 +49,58 @@ class ContenueEditorial
      */
     private $article;
 
+    public function getIdentifiant(): ?string
+    {
+        return $this->identifiant;
+    }
+
+    public function getFicheMetier(): ?string
+    {
+        return $this->ficheMetier;
+    }
+
+    public function setFicheMetier(string $ficheMetier): self
+    {
+        $this->ficheMetier = $ficheMetier;
+
+        return $this;
+    }
+
+    public function getConseil(): ?string
+    {
+        return $this->conseil;
+    }
+
+    public function setConseil(string $conseil): self
+    {
+        $this->conseil = $conseil;
+
+        return $this;
+    }
+
+    public function getInterviews(): ?string
+    {
+        return $this->interviews;
+    }
+
+    public function setInterviews(string $interviews): self
+    {
+        $this->interviews = $interviews;
+
+        return $this;
+    }
+
+    public function getArticle(): ?string
+    {
+        return $this->article;
+    }
+
+    public function setArticle(string $article): self
+    {
+        $this->article = $article;
+
+        return $this;
+    }
+
 
 }

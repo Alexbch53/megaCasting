@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -55,14 +57,79 @@ class PartenaireDiffusion
      *   }
      * )
      */
-    private $OffreDeCasting;
+    private $identifiantOffre;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->OffreDeCasting = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->identifiantOffre = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function getIdentifiant(): ?string
+    {
+        return $this->identifiant;
+    }
+
+    public function getLibelleOffre(): ?string
+    {
+        return $this->libelleOffre;
+    }
+
+    public function setLibelleOffre(?string $libelleOffre): self
+    {
+        $this->libelleOffre = $libelleOffre;
+
+        return $this;
+    }
+
+    public function getLibelleMedia(): ?string
+    {
+        return $this->libelleMedia;
+    }
+
+    public function setLibelleMedia(string $libelleMedia): self
+    {
+        $this->libelleMedia = $libelleMedia;
+
+        return $this;
+    }
+
+    public function getAcces(): ?bool
+    {
+        return $this->acces;
+    }
+
+    public function setAcces(bool $acces): self
+    {
+        $this->acces = $acces;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, OffreDeCasting>
+     */
+    public function getIdentifiantOffre(): Collection
+    {
+        return $this->identifiantOffre;
+    }
+
+    public function addIdentifiantOffre(OffreDeCasting $identifiantOffre): self
+    {
+        if (!$this->identifiantOffre->contains($identifiantOffre)) {
+            $this->identifiantOffre[] = $identifiantOffre;
+        }
+
+        return $this;
+    }
+
+    public function removeIdentifiantOffre(OffreDeCasting $identifiantOffre): self
+    {
+        $this->identifiantOffre->removeElement($identifiantOffre);
+
+        return $this;
     }
 
 }

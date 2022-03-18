@@ -56,5 +56,70 @@ class Organisation
      */
     private $adresseEmail;
 
+    public function getIdentifiant(): ?string
+    {
+        return $this->identifiant;
+    }
+
+    public function getNomOrganisation(): ?string
+    {
+        return $this->nomOrganisation;
+    }
+
+    public function setNomOrganisation(?string $nomOrganisation): self
+    {
+        $this->nomOrganisation = $nomOrganisation;
+
+        return $this;
+    }
+
+    public function getAdresseOrganisation(): ?string
+    {
+        return $this->adresseOrganisation;
+    }
+
+    public function setAdresseOrganisation(?string $adresseOrganisation): self
+    {
+        $this->adresseOrganisation = $adresseOrganisation;
+
+        return $this;
+    }
+
+    public function getCodePostal(): ?int
+    {
+        return $this->codePostal;
+    }
+
+    public function setCodePostal(int $codePostal): self
+    {
+        $this->codePostal = $codePostal;
+
+        return $this;
+    }
+
+    public function getNumeroTelephone(): ?int
+    {
+        return $this->numeroTelephone;
+    }
+
+    public function setNumeroTelephone(int $numeroTelephone): self
+    {
+        $this->numeroTelephone = $numeroTelephone;
+
+        return $this;
+    }
+
+    public function getAdresseEmail(): ?string
+    {
+        return $this->adresseEmail;
+    }
+
+    public function setAdresseEmail(?string $adresseEmail): self
+    {
+        $this->adresseEmail = $adresseEmail;
+
+        return $this;
+    }
+
 
 }

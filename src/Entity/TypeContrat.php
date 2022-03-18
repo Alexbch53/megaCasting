@@ -28,5 +28,22 @@ class TypeContrat
      */
     private $nomcontrat;
 
+    public function getIdentifiant(): ?string
+    {
+        return $this->identifiant;
+    }
+
+    public function getNomcontrat(): ?string
+    {
+        return $this->nomcontrat;
+    }
+
+    public function setNomcontrat(string $nomcontrat): self
+    {
+        $this->nomcontrat = $nomcontrat;
+
+        return $this;
+    }
+
 
 }

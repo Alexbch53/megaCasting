@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -55,14 +57,79 @@ class ListeReferenciel
      *   }
      * )
      */
-    private $OffreDeCasting;
+    private $identifiantOffre;
 
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->OffreDeCasting = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->identifiantOffre = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    public function getIdentifiant(): ?string
+    {
+        return $this->identifiant;
+    }
+
+    public function getTypeContrat(): ?string
+    {
+        return $this->typeContrat;
+    }
+
+    public function setTypeContrat(string $typeContrat): self
+    {
+        $this->typeContrat = $typeContrat;
+
+        return $this;
+    }
+
+    public function getDomaineMetier(): ?string
+    {
+        return $this->domaineMetier;
+    }
+
+    public function setDomaineMetier(string $domaineMetier): self
+    {
+        $this->domaineMetier = $domaineMetier;
+
+        return $this;
+    }
+
+    public function getMetier(): ?string
+    {
+        return $this->metier;
+    }
+
+    public function setMetier(string $metier): self
+    {
+        $this->metier = $metier;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, OffreDeCasting>
+     */
+    public function getIdentifiantOffre(): Collection
+    {
+        return $this->identifiantOffre;
+    }
+
+    public function addIdentifiantOffre(OffreDeCasting $identifiantOffre): self
+    {
+        if (!$this->identifiantOffre->contains($identifiantOffre)) {
+            $this->identifiantOffre[] = $identifiantOffre;
+        }
+
+        return $this;
+    }
+
+    public function removeIdentifiantOffre(OffreDeCasting $identifiantOffre): self
+    {
+        $this->identifiantOffre->removeElement($identifiantOffre);
+
+        return $this;
     }
 
 }

@@ -1,0 +1,48 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$primary: darken(#428bca, 20%);
+// 3. Include remainder of required Bootstrap stylesheets
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// 4. Include any optional Bootstrap components as you like
+@import "./bootstrap";
+
+
+
+// 5. Add additional custom code here
+
+body{
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    background-color: #559a55;
+    max-width: 100%;
+    margin: 0;
+}
+.titre{
+    color: white;
+}
+.nav-margin{
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 2px 1px black;
+}
+.slide{
+    display: flex;
+    justify-content: start;
+}
+.text-slide{
+    margin-left: 20px;
+    text-align: justify;
+}
+.titre-offre{
+    text-align: center;
+    background-color: #559a55;
+    color: white;
+}
+.OffreCasting{
+}

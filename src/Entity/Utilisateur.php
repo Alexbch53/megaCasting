@@ -49,5 +49,58 @@ class Utilisateur
      */
     private $dateajout;
 
+    public function getIdentifiant(): ?string
+    {
+        return $this->identifiant;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getMotdepasse(): ?string
+    {
+        return $this->motdepasse;
+    }
+
+    public function setMotdepasse(?string $motdepasse): self
+    {
+        $this->motdepasse = $motdepasse;
+
+        return $this;
+    }
+
+    public function getAcces(): ?bool
+    {
+        return $this->acces;
+    }
+
+    public function setAcces(bool $acces): self
+    {
+        $this->acces = $acces;
+
+        return $this;
+    }
+
+    public function getDateajout(): ?\DateTimeInterface
+    {
+        return $this->dateajout;
+    }
+
+    public function setDateajout(\DateTimeInterface $dateajout): self
+    {
+        $this->dateajout = $dateajout;
+
+        return $this;
+    }
+
 
 }

@@ -29,20 +29,6 @@ class Contrat
     private $intituleContrat;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="Date_Debut", type="date", nullable=false)
-     */
-    private $dateDebut;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="Date_Fin", type="date", nullable=false)
-     */
-    private $dateFin;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="Description", type="text", length=16, nullable=false)
@@ -57,7 +43,48 @@ class Contrat
      *   @ORM\JoinColumn(name="Identifiant_Type_Contrat", referencedColumnName="Identifiant")
      * })
      */
-    private $TypeContrat;
+    private $identifiantTypeContrat;
+
+    public function getIdentifiant(): ?string
+    {
+        return $this->identifiant;
+    }
+
+    public function getIntituleContrat(): ?string
+    {
+        return $this->intituleContrat;
+    }
+
+    public function setIntituleContrat(string $intituleContrat): self
+    {
+        $this->intituleContrat = $intituleContrat;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getIdentifiantTypeContrat(): ?TypeContrat
+    {
+        return $this->identifiantTypeContrat;
+    }
+
+    public function setIdentifiantTypeContrat(?TypeContrat $identifiantTypeContrat): self
+    {
+        $this->identifiantTypeContrat = $identifiantTypeContrat;
+
+        return $this;
+    }
 
 
 }

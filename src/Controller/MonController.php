@@ -7,24 +7,21 @@ use App\Entity\OffreDeCasting;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MonController extends AbstractController
 {
-    #[Route('/mon', name: 'app_mon')]
-    public function index(ManagerRegistry $doctrine): Response
+    #[Route('/', name: 'accueil')]
+    public function index(SessionInterface $session,ManagerRegistry $doctrine): Response
     {
-        //récupérer un champ
         $em = $doctrine->getManager();
-        $artisteRepo = $em->getRepository(Artiste::class);
-        $artiste = $artisteRepo->findAll();
-        dump($artiste);
-
-
-
+        $OffreRepo = $em->getRepository(OffreDeCasting::class);
+        $offreCasting = $OffreRepo->findAll();
 
         return $this->render('mon/index.html.twig', [
-            'controller_name' => 'MonController',
+            'offreDeCasting' => $offreCasting,
         ]);
     }
+
 }
