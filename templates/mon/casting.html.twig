@@ -7,7 +7,48 @@
     <div class="container-fluid">
         <h2>Casting</h2>
         <div class="row border border-dark rounded">
-            <div class="filtre">
+            <div class="filtre col-md-2 rounded">
+                <h4>Filtre</h4>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Domaine :
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        {% for domaine in Domaine %}
+                        <li><a class="dropdown-item" href="#">{{ domaine.nom }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="radio-btn">
+                    <label class="" type="text">
+                        Type activité :
+                    </label>
+                    <ul>
+                        {% for metier in Metier %}
+                            <li><div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        {{ metier.nom }}
+                                    </label>
+                                </div></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <di class="radio-btn">
+                    <label class="" type="text">
+                        Type de contrat :
+                    </label>
+                    <ul>
+                        {% for contrat in TypeContrat %}
+                            <li><div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        {{ contrat.nomcontrat }}
+                                    </label>
+                                </div></li>
+                        {% endfor %}
+                    </ul>
+                </di>
 
             </div>
             {% for offre in offreDeCasting %}
@@ -16,7 +57,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ offre.intituleOffre }}</h5>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn">Postuler</a>
+                        <a href="/casting/{{ offre.identifiant }}" class="btn">Postuler</a>
                     </div>
                 </div>
             {% endfor %}

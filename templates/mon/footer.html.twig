@@ -1,0 +1,28 @@
+{# FOOTER /////////////#}
+
+<footer class="text-center text-white" style="background-color: #f1f1f1;">
+    <!-- Grid container -->
+    <div class="container pt-4">
+        <!-- Section: Social media -->
+        <div class="nbCasting">
+            {% set nbCasting = 0 %}
+            {% for casting in offreDeCasting %}
+                {% if casting.identifiant > 0 %}
+                    {% set nbCasting = nbCasting + 1 %}
+                {% endif %}
+            {% endfor %}
+            <span>Nombre de casting actif : {{ nbCasting }} ||</span>
+            <span>Date dernier casting publiée : {{ offreDeCasting | last.dateDebut | date("d M Y") }}</span>
+        </div>
+        <div class="date"></div>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2022 Copyright:
+        <a class="text-dark" href="localhost:8000">MegaCasting.fr</a>
+    </div>
+    <!-- Copyright -->
+</footer>
