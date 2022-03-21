@@ -20,12 +20,11 @@ body{
 .container{
     display: flex;
     justify-content: center;
-    background-color: #559a55;
     max-width: 100%;
-    margin: 0;
 }
 .titre{
-    color: white;
+    width: 350px;
+    margin-bottom: 10px;
 }
 .nav-margin{
     margin-bottom: 20px;
@@ -36,13 +35,22 @@ body{
     justify-content: start;
 }
 .text-slide{
-    margin-left: 20px;
     text-align: justify;
+    padding: 20px;
 }
 .titre-offre{
     text-align: center;
-    background-color: #559a55;
+    background-color: #c2d69b;
     color: white;
 }
-.OffreCasting{
+.cardMargin{
+    margin: 10px;
 }
+.btn{
+    background-color: #c2d69b;
+    color: white;
+}
+
+// casting css ///////////////////////
+
+

@@ -1,44 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MonController!{% endblock %}
+{% block title %}MegaCasting{% endblock %}
 
 {% block body %}
 
-<div class="container">
-    <h1 class="titre">MegaCasting</h1>
-</div>
 
-{#    NAVBAR ///////#}
-<div class="nav-margin">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Accueil</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Casting</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Artiste</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link active" href="#" >Actualité</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active">Interviews</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Rechercher</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-</div>
 {#   SLIDE WITH TEXT /////////  #}
     <div class="slide">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -77,16 +43,91 @@
     <div class="titre-offre">
         <h2>Offre de Casting du moment</h2>
     </div>
-    <div class="row"
-        {% for offre in offreDeCasting %}
-        <div class="card col-md-3   " style="width: 18rem;">
-            <img src="/images/casting.jpg" class="card-img-top" alt="" width="30%">
-            <div class="card-body">
-                <h5 class="card-title">{{ offre.intituleOffre }}</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="container-fluid">
+        <div class="row">
+            {% for offre in offreDeCasting %}
+            <div class="card row-col-md-3 cardMargin" style="width: 18rem;">
+                <img src="/images/casting.jpg" class="card-img-top" alt="" width="30%">
+                <div class="card-body">
+                    <h5 class="card-title">{{ offre.intituleOffre }}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn">Postuler</a>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
+
+{# FOOTER /////////////#}
+
+<footer class="text-center text-white" style="background-color: #f1f1f1;">
+    <!-- Grid container -->
+    <div class="container pt-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+            <!-- Facebook -->
+            <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+            ><i class="fab fa-facebook-f"></i
+                ></a>
+
+            <!-- Twitter -->
+            <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+            ><i class="fab fa-twitter"></i
+                ></a>
+
+            <!-- Google -->
+            <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+            ><i class="fab fa-google"></i
+                ></a>
+
+            <!-- Instagram -->
+            <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+            ><i class="fab fa-instagram"></i
+                ></a>
+
+            <!-- Linkedin -->
+            <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+            ><i class="fab fa-linkedin"></i
+                ></a>
+            <!-- Github -->
+            <a
+                    class="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+            ><i class="fab fa-github"></i
+                ></a>
+        </section>
+        <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-dark" href="localhost:8000">MegaCasting.fr</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+
 {% endblock %}
