@@ -24,7 +24,8 @@
         {% endblock %}
     </body>
 
-    {{ include('mon/footer.html.twig') }}
+    {{ render(controller('App\\Controller\\FooterController::footer')) }}
+
     {# FOOTER /////////////#}
 
 

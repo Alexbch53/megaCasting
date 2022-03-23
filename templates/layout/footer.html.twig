@@ -4,15 +4,9 @@
     <!-- Grid container -->
     <div class="container pt-4">
         <!-- Section: Social media -->
-        <div class="nbCasting">
-            {% set nbCasting = 0 %}
-            {% for casting in offreDeCasting %}
-                {% if casting.identifiant > 0 %}
-                    {% set nbCasting = nbCasting + 1 %}
-                {% endif %}
-            {% endfor %}
-            <span>| Nombre de casting actif : {{ nbCasting }} ||</span>
-            <span>Date dernier casting publiée : {{ offreDeCasting | last.dateDebut | date("d M Y") }} |</span>
+        <div class="nbCasting text-black">
+            <span>| Nombre de casting actif : {{ OffreDeCastingCount }} ||</span>
+            <span>Date dernier casting publiée : {{ OffreDeCasting | last.dateDebut | date("d M Y") }} |</span>
             <br>
         </div>
         <div class="date"></div>
