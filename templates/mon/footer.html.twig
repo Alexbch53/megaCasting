@@ -11,8 +11,9 @@
                     {% set nbCasting = nbCasting + 1 %}
                 {% endif %}
             {% endfor %}
-            <span>Nombre de casting actif : {{ nbCasting }} ||</span>
-            <span>Date dernier casting publiée : {{ offreDeCasting | last.dateDebut | date("d M Y") }}</span>
+            <span>| Nombre de casting actif : {{ nbCasting }} ||</span>
+            <span>Date dernier casting publiée : {{ offreDeCasting | last.dateDebut | date("d M Y") }} |</span>
+            <br>
         </div>
         <div class="date"></div>
         <!-- Section: Social media -->
