@@ -20,7 +20,7 @@ class MonController extends AbstractController
         $offreCasting = $OffreRepo->findAll();
 
         return $this->render('mon/index.html.twig', [
-            'offreDeCasting' => $offreCasting,
+            'OffreDeCasting' => $offreCasting,
         ]);
     }
 
