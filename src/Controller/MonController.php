@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Artiste;
 use App\Entity\OffreDeCasting;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
