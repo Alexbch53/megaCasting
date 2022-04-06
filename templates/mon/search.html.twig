@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Casting{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="row">
+            {% for recherche in casting %}
+                <div class="card row-col-md-3 cardMargin" style="width: 18rem;">
+                    <img src="/images/casting.jpg" class="card-img-top" alt="" width="30%">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ recherche.intituleOffre }}</h5>
+                        <p class="card-text">{{ recherche }}</p>
+                        <a href="#" class="btn">Postuler</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Artiste
@@ -12,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="Artiste", indexes={@ORM\Index(name="IDX_53BA0CD330B2325D", columns={"IdCivilite"})})
  * @ORM\Entity
  */
-class Artiste
+class Artiste implements UserInterface
 {
     /**
      * @var int
@@ -192,4 +193,20 @@ class Artiste
         return $this;
     }
 
+    public function getRoles(): array
+    {
+        // TODO: Implement getRoles() method.
+        return [];
+    }
+
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+    }
+
+    public function getUserIdentifier(): string
+    {
+        // TODO: Implement getUserIdentifier() method.
+        return "";
+    }
 }

@@ -13,26 +13,20 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ url("casting") }}">Casting</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Artiste</a>
-                        </li>
                         <li class="nav-item ">
-                            <a class="nav-link active" href="#" >Actualité</a>
+                            <a class="nav-link active navbar-brand" aria-current="page" href="{{ url("casting") }}">Casting</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active">Interviews</a>
+                            <a class="nav-link active navbar-brand" href="#">Artiste</a>
                         </li>
+
                     </ul>
                     <form class="d-flex">
-                        <button class="btn btn-outline-success mx-2" type="submit">Sign up</button>
-                        <a class="nav-link active btn-outline-success mx-2 btn" type="submit" href="{{ url("login") }}">Login</a>
+                        <a class="btn btn-outline-success mx-2" type="submit" href="{{ url('login') }}">Login</a>
                     </form>
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    <form method="post" class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="nameSearch">
+                        <button class="btn btn-outline-success" type="submit" name="recherche">Search</button>
                     </form>
                 </div>
             </div>
