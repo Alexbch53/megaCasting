@@ -24,42 +24,42 @@ class Civilite
     /**
      * @var string
      *
-     * @ORM\Column(name="Libelle", type="string", length=100, nullable=false)
+     * @ORM\Column(name="civiliteLongue", type="string", length=100, nullable=false)
      */
-    private $libelle;
+    private $civiliteLongue;
 
     /**
      * @var string
      *
      * @ORM\Column(name="LibelleCourt", type="string", length=10, nullable=false)
      */
-    private $libellecourt;
+    private $civilitecourt;
 
     public function getIdentifiant(): ?int
     {
         return $this->identifiant;
     }
 
-    public function getLibelle(): ?string
+    public function getciviliteLongue(): ?string
     {
-        return $this->libelle;
+        return $this->civiliteLongue;
     }
 
-    public function setLibelle(string $libelle): self
+    public function setLibelle(string $civiliteLongue): self
     {
-        $this->libelle = $libelle;
+        $this->civiliteLongue = $civiliteLongue;
 
         return $this;
     }
 
-    public function getLibellecourt(): ?string
+    public function getcivilitecourt(): ?string
     {
-        return $this->libellecourt;
+        return $this->civilitecourt;
     }
 
-    public function setLibellecourt(string $libellecourt): self
+    public function setcivilitecourt(string $civilitecourt): self
     {
-        $this->libellecourt = $libellecourt;
+        $this->civilitecourt = $civilitecourt;
 
         return $this;
     }

@@ -40,7 +40,7 @@ class Contrat
      *
      * @ORM\ManyToOne(targetEntity="TypeContrat")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Identifiant_Type_Contrat", referencedColumnName="Identifiant")
+     *   @ORM\JoinColumn(name="Identifiant_Type_Contrat", referencedColumnName="Identifiant",nullable=false)
      * })
      */
     private $identifiantTypeContrat;

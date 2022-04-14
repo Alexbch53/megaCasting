@@ -6,7 +6,9 @@
         <!-- Section: Social media -->
         <div class="nbCasting text-black">
             <span>| Nombre de casting actif : {{ OffreDeCastingCount }} ||</span>
+            {% if OffreDeCasting|length > 0 %}
             <span>Date dernier casting publiée : {{ OffreDeCasting | last.dateDebut | date("d M Y") }} |</span>
+            {% endif %}
             <br>
         </div>
         <div class="date"></div>

@@ -63,7 +63,7 @@ class OffreDeCasting
      *
      * @ORM\ManyToOne(targetEntity="Domaine")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Identifiant_Domaine", referencedColumnName="Identifiant")
+     *   @ORM\JoinColumn(name="Identifiant_Domaine", referencedColumnName="Identifiant",nullable=false)
      * })
      */
     private $identifiantDomaine;
@@ -73,7 +73,7 @@ class OffreDeCasting
      *
      * @ORM\ManyToOne(targetEntity="Metier")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Identifiant_Metier", referencedColumnName="Identifiant")
+     *   @ORM\JoinColumn(name="Identifiant_Metier", referencedColumnName="Identifiant",nullable=false)
      * })
      */
     private $identifiantMetier;
@@ -83,7 +83,7 @@ class OffreDeCasting
      *
      * @ORM\ManyToOne(targetEntity="Organisation")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Identifiant_Organisation", referencedColumnName="Identifiant")
+     *   @ORM\JoinColumn(name="Identifiant_Organisation", referencedColumnName="Identifiant",nullable=false)
      * })
      */
     private $identifiantOrganisation;
@@ -93,7 +93,7 @@ class OffreDeCasting
      *
      * @ORM\ManyToOne(targetEntity="TypeContrat")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="Identifiant_Type_Contrat", referencedColumnName="Identifiant")
+     *   @ORM\JoinColumn(name="Identifiant_Type_Contrat", referencedColumnName="Identifiant",nullable=false)
      * })
      */
     private $identifiantTypeContrat;
