@@ -44,6 +44,4 @@ class Domaine
 
         return $this;
     }
-
-
 }

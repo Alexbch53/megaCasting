@@ -29,8 +29,7 @@ class ApplicationController extends AbstractController
         $form = $this->createForm(ApplicationType::class, $application);
 
         $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()){
-
+        if ($form->isSubmitted() && $form->isValid()) {
             $application = $form->getData();
 
 

@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MonController extends AbstractController
 {
     #[Route('/', name: 'accueil')]
-    public function index(SessionInterface $session,ManagerRegistry $doctrine): Response
+    public function index(SessionInterface $session, ManagerRegistry $doctrine): Response
     {
         $em = $doctrine->getManager();
         $OffreRepo = $em->getRepository(OffreDeCasting::class);
@@ -22,5 +22,4 @@ class MonController extends AbstractController
             'OffreDeCasting' => $offreCasting,
         ]);
     }
-
 }

@@ -66,6 +66,4 @@ class Metier
 
         return $this;
     }
-
-
 }

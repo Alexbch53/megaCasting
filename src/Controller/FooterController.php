@@ -11,9 +11,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class FooterController extends AbstractController
 {
-
     #[Route('/footer', name: 'footer')]
-    public function footer(SessionInterface $session,ManagerRegistry $doctrine): Response
+    public function footer(SessionInterface $session, ManagerRegistry $doctrine): Response
     {
         $em = $doctrine->getManager();
         $OffresRepo = $em->getRepository(OffreDeCasting::class);

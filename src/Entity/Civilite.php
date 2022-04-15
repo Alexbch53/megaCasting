@@ -64,5 +64,10 @@ class Civilite
         return $this;
     }
 
+    public function setciviliteLongue(string $civiliteLongue): self
+    {
+        $this->civiliteLongue = $civiliteLongue;
 
+        return $this;
+    }
 }

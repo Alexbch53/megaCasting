@@ -14,11 +14,9 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PageCastingController extends AbstractController
 {
-
     #[Route('/casting/{id}', name: 'pagecasting')]
-    public function pagecasting(SessionInterface $session,ManagerRegistry $doctrine, $id): Response
+    public function pagecasting(SessionInterface $session, ManagerRegistry $doctrine, $id): Response
     {
-
         $em = $doctrine->getManager();
         $query = $em->createQuery('SELECT c FROM App\Entity\OffreDeCasting c WHERE c.identifiant = :id')->setMaxResults(1);
         $query->setParameter('id', $id);

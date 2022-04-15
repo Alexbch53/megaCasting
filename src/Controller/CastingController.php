@@ -14,9 +14,8 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CastingController extends AbstractController
 {
-
     #[Route('/casting', name: 'casting')]
-    public function casting(SessionInterface $session,ManagerRegistry $doctrine): Response
+    public function casting(SessionInterface $session, ManagerRegistry $doctrine): Response
     {
         $em = $doctrine->getManager();
         $OffreRepo = $em->getRepository(OffreDeCasting::class);

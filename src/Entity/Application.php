@@ -1,5 +1,7 @@
 <?php
+
 // src/Entity/Task.php
+
 namespace App\Entity;
 
 class Application
@@ -140,5 +142,4 @@ class Application
     {
         $this->birthDate = $birthDate;
     }
-
 }

@@ -54,12 +54,6 @@ class Artiste implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $dateNaissance;
     /**
-     * @var bool
-     *
-     * @ORM\Column(name="Verification", type="boolean", nullable=false)
-     */
-    private $verification;
-    /**
      * @var \Civilite
      *
      * @ORM\ManyToOne(targetEntity="Civilite")
@@ -133,21 +127,11 @@ class Artiste implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-    public function getVerification(): ?bool
-    {
-        return $this->verification;
-    }
-    public function setVerification(bool $verification): self
-    {
-        $this->verification = $verification;
-
-        return $this;
-    }
-    public function getIdcivilite(): ?Civilite
+    public function getIdcivilite(): \Civilite
     {
         return $this->idcivilite;
     }
-    public function setIdcivilite(?Civilite $idcivilite): self
+    public function setIdcivilite(Civilite $idcivilite): self
     {
         $this->idcivilite = $idcivilite;
 
@@ -247,6 +231,8 @@ class Artiste implements UserInterface, PasswordAuthenticatedUserInterface
     {
         $this->login = $login;
     }
+
+    public function setModifieddate(\DateTime $param)
+    {
+    }
 }
-
-

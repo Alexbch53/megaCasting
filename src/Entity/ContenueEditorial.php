@@ -101,6 +101,4 @@ class ContenueEditorial
 
         return $this;
     }
-
-
 }
