@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Casting{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <h2>Artiste</h2>
+        <div class="row border border-dark rounded">
+            {% for artiste in Artiste %}
+                <div class="card row-col-md-3 cardMargin" style="width: 18rem;">
+                    <img src="/images/casting.jpg" class="card-img-top" alt="" width="30%">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ artiste.nom }} {{ artiste.prenom }}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="/casting/{{ artiste.identifiant }}" class="btn">Description</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
