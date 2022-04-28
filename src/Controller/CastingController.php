@@ -36,5 +36,5 @@ class CastingController extends AbstractController
             'TypeContrat' => $TypeContrat,
             'Metier' => $Metier,
         ]);
-    }
+    } 
 }

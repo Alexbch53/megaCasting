@@ -76,6 +76,8 @@ class Artiste implements UserInterface, PasswordAuthenticatedUserInterface
      * )
      */
     private $identifiantOffre;
+
+
     /**
      * Constructor
      */
@@ -175,7 +177,7 @@ class Artiste implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getUserIdentifier(): string
     {
-        return (string)$this->email;
+        return (string)$this->login;
     }
     /**
      * @see UserInterface

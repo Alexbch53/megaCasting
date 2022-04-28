@@ -40,7 +40,7 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            {% for offre in OffreDeCasting %}
+            {% for offre in OffreDeCasting |slice(0, 4) %}
             <div class="card row-col-md-3 cardMargin" style="width: 18rem;">
                 <img src="/images/casting.jpg" class="card-img-top" alt="" width="30%">
                 <div class="card-body">

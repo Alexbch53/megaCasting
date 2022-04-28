@@ -42,4 +42,16 @@ class ApplicationController extends AbstractController
 
         ]);
     }
+
+    #[Route('/application/success/{id}', name: 'task_success')]
+    public function success(): Response
+    {
+        $em = $doctrine->getManager();
+        $query = $em->createQuery('SELECT c FROM App\Entity\OffreDeCasting c WHERE c.identifiant = :id')->setMaxResults(1);
+        $query->setParameter('id', $id);
+        $casting = $query->getResult();
+
+
+        return $this->render('application/success.html.twig');
+    }
 }
