@@ -2,8 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Application;
-use App\Entity\OffreDeCasting;
+use App\Entity\Postuler;
 use App\Form\Type\ApplicationType;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -13,45 +12,31 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ApplicationController extends AbstractController
 {
-    #[Route('/application/new/{id}', name: 'app_application')]
-    public function new(Request $request, ManagerRegistry $doctrine, $id): Response
+    #[Route('{id}/new', name: 'postuler')]
+    public function new(Request $request, $id, ManagerRegistry $doctrine): Response
     {
+        $user = $this->getUser();
+        $application = new Postuler();
+        $application->setDatePostulation(new \DateTime('today'));
+        $form = $this->createForm(ApplicationType::class, $application);
+
         $em = $doctrine->getManager();
         $query = $em->createQuery('SELECT c FROM App\Entity\OffreDeCasting c WHERE c.identifiant = :id')->setMaxResults(1);
         $query->setParameter('id', $id);
-        $casting = $query->getResult();
-
-        $application = new Application();
-        $application->setFirstName('Alexis');
-        $application->setLastName('Beucher');
-        $application->setApplicationDate(new \DateTime('tomorrow'));
-
-        $form = $this->createForm(ApplicationType::class, $application);
+        $casting = $query->getResult()[0];
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $application = $form->getData();
+            $application->setArtiste($user);
+            $application->setOffreDeCasting($casting);
+            $application->setMotivation($form['motivation']->getData());
+            $em->persist($application);
+            $em->flush();
 
-
-            return $this->redirectToRoute('task_success');
+            return $this->redirectToRoute('casting');
         }
-
         return $this->renderForm('application/new.html.twig', [
             'form' => $form,
-            'casting' => $casting[0],
-
         ]);
-    }
-
-    #[Route('/application/success/{id}', name: 'task_success')]
-    public function success(): Response
-    {
-        $em = $doctrine->getManager();
-        $query = $em->createQuery('SELECT c FROM App\Entity\OffreDeCasting c WHERE c.identifiant = :id')->setMaxResults(1);
-        $query->setParameter('id', $id);
-        $casting = $query->getResult();
-
-
-        return $this->render('application/success.html.twig');
     }
 }

@@ -16,7 +16,7 @@
                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis ea eius exercitationem impedit ipsum, obcaecati ratione sint tenetur velit? Animi consequuntur dolor error et eum ipsa laudantium odio officiis quaerat tempore.. A accusamus adipisci aliquid aperiam architecto consequatur culpa deleniti doloremque dolorum ducimus earum est ex fugiat fugit in, iusto minus nostrum, soluta suscipit tempora tenetur unde vero voluptas voluptates!</span>
             </div>
             <div>
-                <a class="btn d-flex justify-content-center w-50" href="/application/new/{{ casting.identifiant }}">Postuler</a>
+                <a class="btn d-flex justify-content-center w-50" href="{{ path('postuler', {'id': casting.identifiant}) }} ">Postuler</a>
             </div>
         </div>
     </div>

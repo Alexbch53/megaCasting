@@ -24,7 +24,7 @@ class Artiste implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var int
      *
-     * @ORM\Column(name="Identifiant", type="bigint", nullable=false)
+     * @ORM\Column(name="identifiant", type="bigint", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
