@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre Profil{% endblock %}
+
+{% block body %}
+    <div class="container flex-column">
+        <h3>Profil :</h3>
+        <div class="d-flex row">
+            <div class="d-flex flex-column align-items-center  w-75 mt-5">
+                <h1>{{ artiste.nom }} {{ artiste.prenom }}</h1>
+                <ul class="list-group">
+                    <li class="list-group-item "> Date de naissance : {{ artiste.dateNaissance|date }}</li>
+                    <li class="list-group-item"> Email : {{ artiste.login }}</li>
+                    <li class="list-group-item"> CV : {{ artiste.cv }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex flex-row align-items-center">
+            {% for postulation in postulations %}
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-text" style="font-size: 25px">{{ postulation.offreDeCasting.getIntituleOffre() }}</div>
+                        <div class="card-text" style="font-size: 20px">
+                            Par {{ postulation.offreDeCasting.identifiantorganisation.getNomOrganisation() }}</div>
+                        <div class="card-text" style="font-size: 20px"> Motivation
+                            : {{ postulation.getMotivation() }}</div>
+                        <div class="card-text" style="font-size: 20px"> Date de postulation
+                            : {{ postulation.getDatePostulation()|date('d/m/Y') }}</div>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+
+        </div>
+
+
+    </div>
+{% endblock %}
