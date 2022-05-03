@@ -7,6 +7,7 @@ use App\Entity\Metier;
 use App\Entity\OffreDeCasting;
 use App\Entity\TypeContrat;
 use App\Repository\ArtisteRepository;
+use App\Repository\OffreDeCastingRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CastingController extends AbstractController
 {
     #[Route('/casting', name: 'casting')]
-    public function casting(SessionInterface $session, ManagerRegistry $doctrine, Request $request, ArtisteRepository $offreDeCastingRepository): Response
+    public function casting(SessionInterface $session, ManagerRegistry $doctrine, Request $request, OffreDeCastingRepository $offreDeCastingRepository): Response
     {
         $em = $doctrine->getManager();
         $OffreRepo = $em->getRepository(OffreDeCasting::class);

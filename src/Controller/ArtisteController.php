@@ -13,8 +13,12 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ArtisteController extends AbstractController
 {
+    /**
+     * @throws \Doctrine\ORM\NonUniqueResultException
+     * @throws \Doctrine\ORM\NoResultException
+     */
     #[Route('/artiste', name: 'artiste')]
-    public function artiste(ManagerRegistry $doctrine, SessionInterface $session, Request $request, ArtisteRepository $artsiteRepo): Response
+    public function artiste(ManagerRegistry $doctrine, SessionInterface $session, Request $request, ArtisteRepository $artisteRepository): Response
     {
         $em = $doctrine->getManager();
         $artisteRepo = $em->getRepository(Artiste::class);
@@ -24,9 +28,9 @@ class ArtisteController extends AbstractController
 
         $page = (int)$request->query->get("page", 1);
 
-        $artistes = $artisteRepo->getPaginateArtiste($page, $limit);
+        $artistes = $artisteRepository->getPaginateArtiste($page, $limit);
 
-        $total = $artisteRepo->getTotalArtiste();
+        $total = $artisteRepository->getTotalArtiste();
 
 
         return $this->render('mon/artiste.html.twig', [

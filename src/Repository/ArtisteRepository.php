@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\Entity\Artiste;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
 use Doctrine\Persistence\ManagerRegistry;
 
 class ArtisteRepository extends ServiceEntityRepository
@@ -23,6 +25,10 @@ class ArtisteRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    /**
+     * @throws NonUniqueResultException
+     * @throws NoResultException
+     */
     public function getTotalArtiste()
     {
         $query = $this->createQueryBuilder('o')
