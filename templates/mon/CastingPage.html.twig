@@ -4,8 +4,7 @@
 
 {% block body %}
 
-    <h3>{{ casting.intituleOffre }}</h3>
-
+    <h3 class="mx-3">{{ casting.intituleOffre }}</h3>
     <div class="container">
         <div class="block-casting row">
             <div class=" col-md-2" style="width: 50rem;">
@@ -14,9 +13,7 @@
             <div class="col-md-4 decsription-Casting">
                 <h4>Description de la missions : </h4>
                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis ea eius exercitationem impedit ipsum, obcaecati ratione sint tenetur velit? Animi consequuntur dolor error et eum ipsa laudantium odio officiis quaerat tempore.. A accusamus adipisci aliquid aperiam architecto consequatur culpa deleniti doloremque dolorum ducimus earum est ex fugiat fugit in, iusto minus nostrum, soluta suscipit tempora tenetur unde vero voluptas voluptates!</span>
-            </div>
-            <div>
-                <a class="btn d-flex justify-content-center w-50" href="{{ path('postuler', {'id': casting.identifiant}) }} ">Postuler</a>
+                <a class="btn d-flex justify-content-center w-25 mt-2" href="{{ path('postuler', {'id': casting.identifiant}) }}">Postuler</a>
             </div>
         </div>
     </div>

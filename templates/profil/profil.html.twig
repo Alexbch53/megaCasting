@@ -6,7 +6,7 @@
     <div class="container flex-column">
         <h3>Profil :</h3>
         <div class="d-flex row">
-            <div class="d-flex flex-column align-items-center  w-75 mt-5">
+            <div class="d-flex flex-column align-items-center">
                 <h1>{{ artiste.nom }} {{ artiste.prenom }}</h1>
                 <ul class="list-group">
                     <li class="list-group-item "> Date de naissance : {{ artiste.dateNaissance|date }}</li>
@@ -15,9 +15,9 @@
                 </ul>
             </div>
         </div>
-        <div class="d-flex flex-row align-items-center">
+        <div class="d-flex flex-row align-items-center justify-content-center">
             {% for postulation in postulations %}
-                <div class="card">
+                <div class="card col-md-3 m-2 mt-3" style="background-color: #c2d69b;color: #FFFFFF">
                     <div class="card-body">
                         <div class="card-text" style="font-size: 25px">{{ postulation.offreDeCasting.getIntituleOffre() }}</div>
                         <div class="card-text" style="font-size: 20px">

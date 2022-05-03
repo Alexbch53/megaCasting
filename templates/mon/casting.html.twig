@@ -7,8 +7,8 @@
     <div class="container-fluid">
         <h2>Casting</h2>
         <div class="row border border-dark rounded">
-            <div class="filtre col-md-2 rounded">
-                <h4>Filtre</h4>
+            <div class="filtre rounded d-flex col pt-2">
+                <h4 class="mx-2">Filtre :</h4>
                 <div class="dropdown">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                         Domaine :
@@ -19,7 +19,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <div class="radio-btn">
+                <div class="radio-btn flex-column mx-2">
                     <label class="" type="text">
                         Type activité :
                     </label>
@@ -34,7 +34,7 @@
                         {% endfor %}
                     </ul>
                 </div>
-                <di class="radio-btn">
+                <div class="radio-btn flex-column">
                     <label class="" type="text">
                         Type de contrat :
                     </label>
@@ -48,27 +48,29 @@
                                 </div></li>
                         {% endfor %}
                     </ul>
-                </di>
+                </div>
 
             </div>
-            {% for casting in Castings %}
-                <div class="card row-col-md-3 cardMargin" style="width: 18rem;">
-                    <img src="/images/casting.jpg" class="card-img-top" alt="" width="30%">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ casting.intituleOffre }}</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="/casting/{{ casting.identifiant }}" class="btn">Postuler</a>
+            <div class="row">
+                {% for casting in Castings %}
+                    <div class="card row-col-md-3 cardMargin" style="width: 18rem;">
+                        <img src="/images/casting.jpg" class="card-img-top" alt="" width="30%">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ casting.intituleOffre }}</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="/casting/{{ casting.identifiant }}" class="btn">Postuler</a>
+                        </div>
                     </div>
+                {% endfor %}
+                <div class="container">
+                    <ul class="pagination">
+                        {% for item in 1..((total / limit)|round(0, 'ceil')) %}
+                            <li class="page-item page-link">
+                                <a href="?page={{ item }} ">{{ item }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
                 </div>
-            {% endfor %}
-            <div class="container">
-                <ul class="pagination">
-                    {% for item in 1..((total / limit)|round(0, 'ceil')) %}
-                        <li class="page-item page-link">
-                            <a href="?page={{ item }} ">{{ item }}</a>
-                        </li>
-                    {% endfor %}
-                </ul>
             </div>
         </div>
     </div>
